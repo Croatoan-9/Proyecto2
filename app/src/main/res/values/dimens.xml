@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="cornerradius_cv">4dp</dimen>
+    <dimen name="tamano_TVnombre">20sp</dimen>
+    <dimen name="tamano_CVmargen">40sp</dimen>
+    <dimen name="tamano_TVnombremargen">100sp</dimen>
+    <dimen name="tamano_TVmegustasmargen">50sp</dimen>
+</resources>

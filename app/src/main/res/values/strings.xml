@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MASCOTAS</string>
+    <string name="BTNstart">START</string>
+    <string name="TVnombre">JUANITO</string>
+    <string name="megustas">5</string>
+    <string name="boton_fav">Top 5</string>
+    <string name="app_name2">MASCOTAS FAVORITAS</string>
+</resources>
