@@ -2,12 +2,18 @@ package com.lavidaesunvideojuego.mascotasproyecto;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.lavidaesunvideojuego.mascotasproyecto.Adapter.PageAdapter;
+import com.lavidaesunvideojuego.mascotasproyecto.Fragment.MIMascota;
+import com.lavidaesunvideojuego.mascotasproyecto.Fragment.RvMascotas;
+import com.lavidaesunvideojuego.mascotasproyecto.Pojo.AcercaDe;
+import com.lavidaesunvideojuego.mascotasproyecto.Pojo.Contacto;
 
 import java.util.ArrayList;
 
@@ -29,6 +35,17 @@ public class Mascotas extends AppCompatActivity {
                 Intent intent = new Intent(this,MascotasFavoritas.class);
                 startActivity(intent);
                 break;
+
+            case R.id.ItmContacto:
+                Intent intent1 = new Intent(this,Contacto.class);
+                startActivity(intent1);
+                break;
+
+            case R.id.ItmAcercade:
+                Intent intent2 = new Intent(this,AcercaDe.class);
+                startActivity(intent2);
+                break;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -36,8 +53,11 @@ public class Mascotas extends AppCompatActivity {
 
     }
 
-    ArrayList<InfoMascota> mascotas;
-    private RecyclerView listaMascotas;
+
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,32 +66,28 @@ public class Mascotas extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        tabLayout = (TabLayout) findViewById(R.id.TLmascotas);
+        viewPager = (ViewPager) findViewById(R.id.VPmascotas);
 
-
-        listaMascotas = (RecyclerView) findViewById(R.id.RVmascotas);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutCompat.VERTICAL);
-
-        listaMascotas.setLayoutManager(llm);
-        inicializarinfomascotas();
-        inicializarAdaptador();
-
+        setUpViewPager();
 
     }
-    public void inicializarAdaptador(){
-
-        MascotasAdaptador adaptador = new MascotasAdaptador(mascotas);
-        listaMascotas.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment>fragments = new ArrayList<>();
+        fragments.add(new RvMascotas());
+        fragments.add(new MIMascota());
+        return fragments;
     }
-    public void inicializarinfomascotas(){
-         mascotas = new ArrayList<InfoMascota>();
+    private void setUpViewPager(){
 
-        mascotas.add(new InfoMascota(R.drawable.perro1,"Mugre","9"));
-        mascotas.add(new InfoMascota(R.drawable.gato1,"Max","7"));
-        mascotas.add(new InfoMascota(R.drawable.perro2,"Firulais","5"));
-        mascotas.add(new InfoMascota(R.drawable.gato3,"Motas","4"));
-        mascotas.add(new InfoMascota(R.drawable.perro3,"Orejas","5"));
-        mascotas.add(new InfoMascota(R.drawable.gato2,"Rayas","7"));
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_action_name2);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_action_name);
     }
+
+
 }

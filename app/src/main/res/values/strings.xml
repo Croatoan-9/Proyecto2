@@ -5,4 +5,16 @@
     <string name="megustas">5</string>
     <string name="boton_fav">Top 5</string>
     <string name="app_name2">MASCOTAS FAVORITAS</string>
+    <string name="app_name3">ACERCA DE</string>
+    <string name="app_name4">DATOS CONTACTO</string>
+    <string name="TV_Jacobo">Jacobo</string>
+    <string name="ITm_Acercade">Acerca de </string>
+    <string name="ITm_Contacto">Contacto</string>
+    <string name="Info_desarrollador">PUPPY MASCOTAS\n es una aplicacion\n desarrollada por \n La Vida Es Un Videojuego.\n\n Dudas o comentarios visitar \n lavidaesunvideojuego.com\n o su pagina en facebook. \n Derechos reservados.</string>
+    <string name="ET_nombre">Nombre</string>
+    <string name="ET_correo">Correo</string>
+    <string name="ET_mensaje">Escribe un comentario...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

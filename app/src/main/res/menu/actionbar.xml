@@ -3,11 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <item
         android:id="@+id/ItmFav"
-        android:icon="@drawable/estrella"
+        android:icon="@drawable/favorito"
         android:title="@string/boton_fav"
         app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/ItmContacto"
+        android:title="@string/ITm_Contacto"
+        app:showAsAction="withText"
+        />
+    <item
+        android:id="@+id/ItmAcercade"
+        android:title="@string/ITm_Acercade"
+        app:showAsAction="withText"
         />
 
 </menu>
